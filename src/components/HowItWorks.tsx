@@ -3,25 +3,37 @@ import { Calendar, Sparkles, Zap, MessageCircle, Check, ArrowRight } from 'lucid
 
 const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-background relative overflow-hidden">
+    <section id="how-it-works" className="py-24 bg-background section-transition relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-[-5%] w-[30%] h-[30%] bg-purple-100 rounded-full blur-3xl opacity-20 animate-float" />
+        <div className="absolute bottom-1/4 right-[-5%] w-[25%] h-[25%] bg-purple-200 rounded-full blur-3xl opacity-20 animate-float-delay" />
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-[#1400a0]">
-            How Project Me Works
-          </h2>
-          <p className="text-xl text-black/80 text-center max-w-3xl mx-auto mb-16">
-            Your journey to transformation in four simple steps
-          </p>
+          <div className="text-center opacity-0 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1400a0]">
+              How Project Me Works
+            </h2>
+            <p className="text-xl text-black/80 max-w-3xl mx-auto mb-16">
+              Your journey to transformation in four simple steps
+            </p>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
             {steps.map((step, index) => (
-              <div key={index} className="relative group">
+              <div 
+                key={index} 
+                className="relative group opacity-0 animate-fade-up"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
                 <div className="bg-background rounded-xl p-6 h-full border border-black/10
-                              transition-all duration-300 group-hover:-translate-y-1">
+                            shadow-elevation-1 transition-all duration-300 
+                            group-hover:shadow-elevation-2 group-hover:-translate-y-1">
                   <div className="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-[#1400a0] flex items-center justify-center text-xl font-bold text-background">
                     {index + 1}
                   </div>
-                  <div className="mb-5 mt-3 text-[#1400a0]">
+                  <div className="mb-5 mt-3 text-[#1400a0] transition-transform duration-300 group-hover:scale-110">
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-[#1400a0]">{step.title}</h3>
@@ -32,7 +44,10 @@ const HowItWorks: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mt-16">
-            <div className="bg-background rounded-xl p-8 border border-black/10">
+            <div 
+              className="bg-background rounded-xl p-8 border border-black/10 shadow-elevation-1 
+                       opacity-0 animate-fade-up [animation-delay:800ms] card-hover"
+            >
               <h3 className="text-2xl font-semibold mb-6 text-[#1400a0]">What You'll Need</h3>
               <div className="space-y-4">
                 {requirements.map((req, index) => (
@@ -44,7 +59,10 @@ const HowItWorks: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-background rounded-xl p-8 border border-black/10">
+            <div 
+              className="bg-background rounded-xl p-8 border border-black/10 shadow-elevation-1 
+                       opacity-0 animate-fade-up [animation-delay:1000ms] card-hover"
+            >
               <h3 className="text-2xl font-semibold mb-6 text-[#1400a0]">Your Transformation</h3>
               <div className="space-y-4">
                 {transformations.map((transform, index) => (
