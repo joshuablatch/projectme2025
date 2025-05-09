@@ -24,7 +24,18 @@ export default {
           900: '#0d0066',
           950: '#080033'
         }
-      }
+      },
+      boxShadow: {
+        'elevation-1': '0 4px 6px -1px rgba(20, 0, 160, 0.05), 0 2px 4px -1px rgba(20, 0, 160, 0.03)',
+        'elevation-2': '0 10px 15px -3px rgba(20, 0, 160, 0.08), 0 4px 6px -2px rgba(20, 0, 160, 0.05)',
+        'elevation-3': '0 20px 25px -5px rgba(20, 0, 160, 0.1), 0 10px 10px -5px rgba(20, 0, 160, 0.04)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'float-delay': 'float-delay 8s ease-in-out infinite',
+        'fade-up': 'fade-up 0.6s ease-out forwards',
+        'scale-in': 'scale-in 0.4s ease-out forwards',
+      },
     },
   },
   plugins: [],
